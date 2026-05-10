@@ -1,18 +1,12 @@
 {
-  "name": "aspirants-academy-monorepo",
+  "name": "aspirants-academy-root",
   "private": true,
-  "workspaces": [
-    "apps/*"
-  ],
   "scripts": {
-    "dev": "npm run dev --workspace=web",
-    "build": "npm run build --workspace=web",
-    "start": "npm run start --workspace=web"
+    "dev": "npm run dev --prefix apps/web",
+    "build": "npm install --prefix apps/web && npm run build --prefix apps/web",
+    "start": "npm run start --prefix apps/web"
   },
   "dependencies": {
-    "next": "16.2.6"
-  },
-  "devDependencies": {
     "next": "16.2.6"
   }
 }
