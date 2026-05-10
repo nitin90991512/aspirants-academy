@@ -60,7 +60,7 @@ export default function HeroBannerSlider({ banners }: HeroBannerSliderProps) {
           {/* Background */}
           {(slide as Banner).image_url ? (
             <img
-              src={(slide as Banner).image_url}
+              src={slide.image_url.startsWith('http') ? slide.image_url : `/banners/${slide.image_url}`}
               alt={(slide as Banner).title || 'Banner'}
               className="w-full h-full object-cover"
             />
@@ -87,10 +87,14 @@ export default function HeroBannerSlider({ banners }: HeroBannerSliderProps) {
                 </div>
 
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight font-[Poppins] mb-6 animate-fade-in-up">
-                  {(slide as Banner).title || 'Aspirants'}
-                  <span className="block gradient-text-gold">
-                    Academy
-                  </span>
+                  {slide.title || (
+                    <>
+                      Aspirants
+                      <span className="block gradient-text-gold">
+                        Academy
+                      </span>
+                    </>
+                  )}
                 </h1>
 
                 <p className="text-xl text-blue-100 mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.1s' }}>

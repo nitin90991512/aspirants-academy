@@ -1,5 +1,6 @@
 import { GraduationCap, Phone, MapPin, MessageSquare, Share2, Star, Play } from 'lucide-react'
 import Link from 'next/link'
+import Logo from '@/components/Logo'
 
 export default function PublicFooter() {
   return (
@@ -9,9 +10,7 @@ export default function PublicFooter() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-                <GraduationCap className="w-6 h-6 text-white" />
-              </div>
+              <Logo className="w-10 h-10" />
               <div>
                 <div className="font-bold text-white text-base font-[Poppins]">Aspirants Academy</div>
                 <div className="text-xs text-gray-400">Gandhinagar, Gujarat</div>
@@ -25,9 +24,9 @@ export default function PublicFooter() {
                 { icon: Share2, href: '#' },
                 { icon: Star, href: '#' },
                 { icon: Play, href: '#' },
-              ].map(({ icon: Icon, href }) => (
+              ].map(({ icon: Icon, href }, idx) => (
                 <a
-                  key={href}
+                  key={idx}
                   href={href}
                   className="w-8 h-8 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
                 >
@@ -42,11 +41,11 @@ export default function PublicFooter() {
             <h3 className="text-white font-semibold mb-4 font-[Poppins]">Quick Links</h3>
             <ul className="space-y-2">
               {[
-                { href: '#about', label: 'About Us' },
-                { href: '#navodaya', label: 'Navodaya Coaching' },
-                { href: '#achievements', label: 'Results & Achievements' },
-                { href: '#gallery', label: 'Gallery' },
-                { href: '#notices', label: 'Notice Board' },
+                { href: '/#about', label: 'About Us' },
+                { href: '/#navodaya', label: 'Navodaya Coaching' },
+                { href: '/#achievements', label: 'Results & Achievements' },
+                { href: '/gallery', label: 'Gallery' },
+                { href: '/#notices', label: 'Notice Board' },
                 { href: '/login', label: 'Student/Parent Login' },
               ].map((link) => (
                 <li key={link.href}>

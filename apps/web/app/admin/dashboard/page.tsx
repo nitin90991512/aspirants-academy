@@ -42,7 +42,7 @@ async function getDashboardData() {
     const totalMarked = (todayAttendance || []).length
     const attendancePct = totalMarked > 0 ? Math.round((presentCount / totalMarked) * 100) : 0
 
-    const pendingTotal = (pendingFees || []).reduce((sum: number, f: { total_amount: number }) => sum + (f.total_amount || 0), 0)
+    const pendingTotal = (pendingFees || []).reduce((sum: number, f: { pending_amount: number }) => sum + (f.pending_amount || 0), 0)
 
     return {
       totalStudents: totalStudents || 0,

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { GraduationCap, Phone, Menu } from 'lucide-react'
+import Logo from '@/components/Logo'
 
 export default function PublicHeader() {
   return (
@@ -8,9 +9,7 @@ export default function PublicHeader() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-md">
-              <GraduationCap className="w-6 h-6 text-white" />
-            </div>
+            <Logo className="w-12 h-12" />
             <div>
               <div className="font-bold text-gray-900 text-base leading-tight font-[Poppins]">
                 Aspirants Academy
@@ -21,22 +20,12 @@ export default function PublicHeader() {
 
           {/* Nav Links */}
           <nav className="hidden md:flex items-center gap-6">
-            {[
-              { href: '#about', label: 'About' },
-              { href: '#notices', label: 'Notices' },
-              { href: '#navodaya', label: 'Navodaya' },
-              { href: '#achievements', label: 'Results' },
-              { href: '#gallery', label: 'Gallery' },
-              { href: '#contact', label: 'Contact' },
-            ].map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-gray-600 hover:text-blue-600 transition"
-              >
-                {link.label}
-              </a>
-            ))}
+            <Link href="/#about" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition">About</Link>
+            <Link href="/#notices" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition">Notices</Link>
+            <Link href="/#navodaya" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition">Navodaya</Link>
+            <Link href="/#achievements" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition">Results</Link>
+            <Link href="/gallery" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition">Gallery</Link>
+            <Link href="/#contact" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition">Contact</Link>
           </nav>
 
           {/* CTA Buttons */}

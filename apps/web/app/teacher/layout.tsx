@@ -8,6 +8,7 @@ import {
   LayoutDashboard, UserCheck, BookOpen, ClipboardList,
   TestTube, LogOut, GraduationCap, Bell, Menu, X, MessageSquare
 } from 'lucide-react'
+import Logo from '@/components/Logo'
 
 const navItems = [
   { href: '/teacher/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
@@ -34,9 +35,7 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
     <div className="flex h-screen bg-gray-50 overflow-hidden">
       <aside className="hidden lg:flex w-56 bg-white border-r border-gray-100 flex-col flex-shrink-0">
         <div className="flex items-center gap-3 px-4 py-5 border-b border-gray-100">
-          <div className="w-9 h-9 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
-            <GraduationCap className="w-5 h-5 text-white" />
-          </div>
+          <Logo className="w-10 h-10" />
           <div>
             <div className="font-bold text-gray-900 text-sm font-[Poppins]">Aspirants Academy</div>
             <div className="text-xs text-green-600 font-medium">Teacher Panel</div>

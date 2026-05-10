@@ -10,6 +10,7 @@ import {
   GraduationCap, ChevronDown, Bell, Search, School, Calendar, Image,
   BarChart3, Menu, X, UserCog, Trophy
 } from 'lucide-react'
+import Logo from '@/components/Logo'
 
 const navGroups = [
   {
@@ -33,7 +34,8 @@ const navGroups = [
       { href: '/admin/attendance', icon: UserCheck, label: 'Attendance' },
       { href: '/admin/exams', icon: ClipboardList, label: 'Exams & Results' },
       { href: '/admin/homework', icon: BookOpen, label: 'Homework' },
-      { href: '/admin/timetable', icon: Calendar, label: 'Timetable' },
+      { href: '/admin/academics/timetable', icon: Calendar, label: 'Timetable' },
+      { href: '/admin/academics/syllabus', icon: BookOpen, label: 'Syllabus' },
       { href: '/admin/tests', icon: TestTube, label: 'Online Tests' },
     ],
   },
@@ -81,9 +83,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     <div className="flex flex-col h-full">
       {/* Logo */}
       <div className="flex items-center gap-3 px-4 py-5 border-b border-gray-100">
-        <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-sm">
-          <GraduationCap className="w-5 h-5 text-white" />
-        </div>
+        <Logo className="w-10 h-10" />
         <div>
           <div className="font-bold text-gray-900 text-sm font-[Poppins] leading-tight">Aspirants Academy</div>
           <div className="text-xs text-blue-600 font-medium">Admin Panel</div>
