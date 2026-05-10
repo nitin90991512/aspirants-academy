@@ -1,0 +1,1 @@
+﻿export default function TestsPage() { return <div className='p-6'><h1 className='text-2xl font-bold'>Online Tests</h1><p className='text-gray-500 mt-2'>Create MCQ tests.</p></div> }

@@ -1,0 +1,1 @@
+﻿export default function ExamsPage() { return <div className='p-6'><h1 className='text-2xl font-bold'>Exams and Results</h1><p className='text-gray-500 mt-2'>Create exams and enter marks.</p></div> }
