@@ -175,7 +175,7 @@ export default function NoticesPage() {
               )}
 
               <div className="space-y-4">
-                <Input label="Notice Title *" value={form.title} onChange={(v) => setForm({...form, title: v})} required placeholder="e.g. Holiday Announcement" />
+                <Input label="Notice Title *" value={form.title} onChange={(v: string) => setForm({...form, title: v})} required placeholder="e.g. Holiday Announcement" />
                 
                 <div>
                   <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Content *</label>
@@ -244,7 +244,7 @@ export default function NoticesPage() {
   )
 }
 
-function Input({ label, value, onChange, type = 'text', required = false, placeholder = '' }: any) {
+function Input({ label, value, onChange, type = 'text', required = false, placeholder = '' }: { label: string, value: string, onChange: (v: string) => void, type?: string, required?: boolean, placeholder?: string }) {
   return (
     <div>
       <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">{label}</label>

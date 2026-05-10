@@ -5,7 +5,7 @@ import { createClient } from '@/lib/supabase/client'
 import { 
   CreditCard, Loader2, DollarSign, Calendar, 
   Receipt, Clock, CheckCircle, AlertCircle,
-  TrendingUp, Wallet, ArrowRight
+  TrendingUp, Wallet, ArrowRight, Info
 } from 'lucide-react'
 
 export default function ParentFeesPage() {
@@ -36,7 +36,8 @@ export default function ParentFeesPage() {
 
         if (linkData) {
           const studentId = linkData.student_id
-          setStudent(linkData.student)
+          const studentObj = Array.isArray(linkData.student) ? linkData.student[0] : linkData.student
+          setStudent(studentObj)
 
           // 2. Get Fee Summary (using RPC)
           const { data: sum, error: sumErr } = await supabase.rpc('get_student_fee_summary', { student_uuid: studentId })

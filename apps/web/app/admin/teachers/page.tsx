@@ -205,9 +205,9 @@ export default function TeachersPage() {
                 <div className="space-y-4">
                   <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider">Personal Details</h3>
                   <div className="space-y-3">
-                    <Input label="Full Name *" value={form.full_name} onChange={(v) => setForm({...form, full_name: v})} required placeholder="John Doe" />
-                    <Input label="Phone Number *" value={form.phone} onChange={(v) => setForm({...form, phone: v})} required placeholder="10-digit mobile" />
-                    <Input label="Email Address" type="email" value={form.email} onChange={(v) => setForm({...form, email: v})} placeholder="teacher@example.com" />
+                    <Input label="Full Name *" value={form.full_name} onChange={(v: string) => setForm({...form, full_name: v})} required placeholder="John Doe" />
+                    <Input label="Phone Number *" value={form.phone} onChange={(v: string) => setForm({...form, phone: v})} required placeholder="10-digit mobile" />
+                    <Input label="Email Address" type="email" value={form.email} onChange={(v: string) => setForm({...form, email: v})} placeholder="teacher@example.com" />
                     <div>
                       <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Gender</label>
                       <select 
@@ -226,11 +226,11 @@ export default function TeachersPage() {
                 <div className="space-y-4">
                   <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider">Professional Info</h3>
                   <div className="space-y-3">
-                    <Input label="Qualification" value={form.qualification} onChange={(v) => setForm({...form, qualification: v})} placeholder="e.g. M.Sc, B.Ed" />
-                    <Input label="Specializations" value={form.specialization} onChange={(v) => setForm({...form, specialization: v})} placeholder="Maths, Science (comma separated)" />
-                    <Input label="Employee ID" value={form.employee_id} onChange={(v) => setForm({...form, employee_id: v})} placeholder="Auto-generated if empty" />
-                    <Input label="Joining Date" type="date" value={form.joining_date} onChange={(v) => setForm({...form, joining_date: v})} />
-                    <Input label="Salary Amount" type="number" value={form.salary_amount} onChange={(v) => setForm({...form, salary_amount: v})} placeholder="Monthly salary" />
+                    <Input label="Qualification" value={form.qualification} onChange={(v: string) => setForm({...form, qualification: v})} placeholder="e.g. M.Sc, B.Ed" />
+                    <Input label="Specializations" value={form.specialization} onChange={(v: string) => setForm({...form, specialization: v})} placeholder="Maths, Science (comma separated)" />
+                    <Input label="Employee ID" value={form.employee_id} onChange={(v: string) => setForm({...form, employee_id: v})} placeholder="Auto-generated if empty" />
+                    <Input label="Joining Date" type="date" value={form.joining_date} onChange={(v: string) => setForm({...form, joining_date: v})} />
+                    <Input label="Salary Amount" type="number" value={form.salary_amount} onChange={(v: string) => setForm({...form, salary_amount: v})} placeholder="Monthly salary" />
                   </div>
                 </div>
 
@@ -271,7 +271,7 @@ export default function TeachersPage() {
   )
 }
 
-function Input({ label, value, onChange, type = 'text', required = false, placeholder = '' }: any) {
+function Input({ label, value, onChange, type = 'text', required = false, placeholder = '' }: { label: string, value: string, onChange: (v: string) => void, type?: string, required?: boolean, placeholder?: string }) {
   return (
     <div>
       <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">{label}</label>

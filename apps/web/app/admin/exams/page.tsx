@@ -190,7 +190,7 @@ export default function ExamsPage() {
   )
 }
 
-function Input({ label, value, onChange, type = 'text', required = false }: any) {
+function Input({ label, value, onChange, type = 'text', required = false }: { label: string, value: string, onChange: (v: string) => void, type?: string, required?: boolean }) {
   return (
     <div>
       <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">{label}</label>

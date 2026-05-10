@@ -43,7 +43,8 @@ export default function ParentAcademicsPage() {
           .single()
 
         if (linkData?.student) {
-          setStudent(linkData.student)
+          const studentObj = Array.isArray(linkData.student) ? linkData.student[0] : linkData.student
+          setStudent(studentObj)
           
           // 2. Fetch Timetable
           const { data: tt } = await supabase
@@ -53,7 +54,7 @@ export default function ParentAcademicsPage() {
               subject:subject_id (name),
               teacher:teacher_id (profiles:profile_id (full_name))
             `)
-            .eq('class_id', linkData.student.class_id)
+            .eq('class_id', studentObj.class_id)
             .order('period_number')
           
           if (tt) setTimetable(tt)
@@ -65,7 +66,7 @@ export default function ParentAcademicsPage() {
               *,
               subject:subject_id (name)
             `)
-            .eq('class_id', linkData.student.class_id)
+            .eq('class_id', studentObj.class_id)
           
           if (syl) setSyllabuses(syl)
         }

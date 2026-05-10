@@ -241,14 +241,14 @@ export default function ClassesPage() {
                       {[1,2,3,4,5,6,7,8,9,10,11,12].map(s => <option key={s} value={s}>{s}th Standard</option>)}
                     </select>
                   </div>
-                  <Input label="Section / Division" value={form.section} onChange={(v) => setForm({...form, section: v})} placeholder="e.g. A, B, Rose" />
+                  <Input label="Section / Division" value={form.section} onChange={(v: string) => setForm({...form, section: v})} placeholder="e.g. A, B, Rose" />
                 </div>
 
-                <Input label="Class Display Name" value={form.name} onChange={(v) => setForm({...form, name: v})} placeholder="e.g. 10th Science Batch" />
+                <Input label="Class Display Name" value={form.name} onChange={(v: string) => setForm({...form, name: v})} placeholder="e.g. 10th Science Batch" />
                 
                 <div className="grid grid-cols-2 gap-4">
-                  <Input label="Room Number" value={form.room_number} onChange={(v) => setForm({...form, room_number: v})} placeholder="e.g. Room 101" />
-                  <Input label="Capacity" type="number" value={form.capacity} onChange={(v) => setForm({...form, capacity: v})} />
+                  <Input label="Room Number" value={form.room_number} onChange={(v: string) => setForm({...form, room_number: v})} placeholder="e.g. Room 101" />
+                  <Input label="Capacity" type="number" value={form.capacity} onChange={(v: string) => setForm({...form, capacity: v})} />
                 </div>
 
                 <div>
@@ -289,7 +289,7 @@ export default function ClassesPage() {
   )
 }
 
-function Input({ label, value, onChange, type = 'text', required = false, placeholder = '' }: any) {
+function Input({ label, value, onChange, type = 'text', required = false, placeholder = '' }: { label: string, value: string, onChange: (v: string) => void, type?: string, required?: boolean, placeholder?: string }) {
   return (
     <div>
       <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">{label}</label>

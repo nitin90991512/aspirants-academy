@@ -194,7 +194,7 @@ export default function AdminBannersPage() {
   )
 }
 
-function Input({ label, value, onChange, type = 'text', required = false, placeholder = '' }: any) {
+function Input({ label, value, onChange, type = 'text', required = false, placeholder = '' }: { label: string, value: any, onChange: (v: string) => void, type?: string, required?: boolean, placeholder?: string }) {
   return (
     <div>
       <label className="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">{label}</label>

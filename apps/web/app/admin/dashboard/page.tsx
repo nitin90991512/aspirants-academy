@@ -30,7 +30,7 @@ async function getDashboardData() {
       supabase.from('teachers').select('*', { count: 'exact', head: true }).eq('is_active', true),
       supabase.from('classes').select('*', { count: 'exact', head: true }).eq('is_active', true),
       supabase.from('attendance').select('status').eq('date', today),
-      supabase.from('pending_fees_view').select('total_amount').limit(100),
+      supabase.from('pending_fees_view').select('pending_amount').limit(100),
       supabase.from('fee_payments').select('amount_paid, paid_at, students(profiles(full_name))').order('paid_at', { ascending: false }).limit(5),
       supabase.from('notices').select('*', { count: 'exact', head: true }).eq('is_published', true),
       supabase.from('exams').select('name, start_date, exam_type, classes(name)').eq('is_published', false).gte('start_date', today).lte('start_date', new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10)).limit(3),
